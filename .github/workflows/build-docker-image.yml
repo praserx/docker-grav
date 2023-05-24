@@ -3,7 +3,7 @@ name: build-docker-image
 on: [push] 
 
 jobs:
-  check-bats-version:
+  build-docker-image:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
