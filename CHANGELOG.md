@@ -1,3 +1,4 @@
 # v1.7.41.1
 
-* Initial build
+* PHP: v8.2.6
+* Grav: v1.7.41.1
