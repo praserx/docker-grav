@@ -1,6 +1,10 @@
 # Grav Docker Image
 
-Unofficial up-to-date docker image build for Grav (getgrav.org) based on [docker-grav](https://github.com/getgrav/docker-grav).
+Unofficial up-to-date docker image build for Grav (getgrav.org).
+
+```
+sudo docker run -d --name grav -p 127.0.0.1:8080:8080 praserx/grav:latest
+```
 
 ## Versioning
 
