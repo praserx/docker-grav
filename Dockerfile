@@ -70,7 +70,7 @@ RUN chown www-data:www-data /var/www
 USER www-data
 
 # Define Grav specific version of Grav or use latest stable
-ARG GRAV_VERSION=1.7.41.3
+ARG GRAV_VERSION=1.7.42.3
 
 # Install Grav (with admin extension)
 WORKDIR /var/www
