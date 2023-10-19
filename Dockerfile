@@ -1,4 +1,4 @@
-FROM php:8.2.8-fpm
+FROM php:8.2.11-fpm
 LABEL maintainer="PraserX <praserx@gmail.com>"
 LABEL description="Unofficial up-to-date Dockerfile for Grav based on \
     offical docker-grav"
