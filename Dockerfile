@@ -1,4 +1,4 @@
-FROM php:8.2.11-fpm
+FROM php:8.2.15-fpm
 LABEL maintainer="PraserX <praserx@gmail.com>"
 LABEL description="Unofficial up-to-date Dockerfile for Grav based on \
     offical docker-grav"
@@ -70,7 +70,7 @@ RUN chown www-data:www-data /var/www
 USER www-data
 
 # Define Grav specific version of Grav or use latest stable
-ARG GRAV_VERSION=1.7.42.3
+ARG GRAV_VERSION=1.7.44
 
 # Install Grav (with admin extension)
 WORKDIR /var/www
