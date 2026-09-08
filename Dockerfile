@@ -11,7 +11,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libpng-dev \
     libyaml-dev \
-    libzip4 \
     libzip-dev \
     zlib1g-dev \
     libicu-dev \
@@ -34,7 +33,7 @@ RUN docker-php-ext-install \
 
 # Install PHP extensions via PECL
 RUN pecl channel-update pecl.php.net \
-    && pecl install apcu yaml \ 
+    && pecl install apcu yaml \
     && docker-php-ext-enable apcu yaml
 
 RUN rm -rf /usr/local/etc/php-fpm.d/zz-docker.conf
