@@ -1,4 +1,4 @@
-FROM php:8.2.28-fpm
+FROM php:8.3.33-fpm
 LABEL maintainer="PraserX <praserx@gmail.com>"
 LABEL description="Unofficial up-to-date Dockerfile for Grav based on \
     offical docker-grav"
@@ -11,7 +11,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libjpeg62-turbo-dev \
     libpng-dev \
     libyaml-dev \
-    libzip4 \
     libzip-dev \
     zlib1g-dev \
     libicu-dev \
@@ -34,7 +33,7 @@ RUN docker-php-ext-install \
 
 # Install PHP extensions via PECL
 RUN pecl channel-update pecl.php.net \
-    && pecl install apcu yaml \ 
+    && pecl install apcu yaml \
     && docker-php-ext-enable apcu yaml
 
 RUN rm -rf /usr/local/etc/php-fpm.d/zz-docker.conf
@@ -70,11 +69,11 @@ RUN chown www-data:www-data /var/www
 USER www-data
 
 # Define Grav specific version of Grav or use latest stable
-ARG GRAV_VERSION=1.7.48
+ARG GRAV_VERSION=1.7.53
 
 # Install Grav (with admin extension)
 WORKDIR /var/www
-RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
+RUN curl -fsSL -o grav-admin.zip https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-admin-v${GRAV_VERSION}.zip && \
     unzip grav-admin.zip && \
     rm -rf /var/www/html && \
     mv -T /var/www/grav-admin /var/www/html && \
