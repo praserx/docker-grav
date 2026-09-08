@@ -73,7 +73,7 @@ ARG GRAV_VERSION=1.7.53
 
 # Install Grav (with admin extension)
 WORKDIR /var/www
-RUN curl -o grav-admin.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
+RUN curl -fsSL -o grav-admin.zip https://github.com/getgrav/grav/releases/download/${GRAV_VERSION}/grav-admin-v${GRAV_VERSION}.zip && \
     unzip grav-admin.zip && \
     rm -rf /var/www/html && \
     mv -T /var/www/grav-admin /var/www/html && \
