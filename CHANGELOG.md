@@ -1,3 +1,8 @@
+# v2.0.26-2
+
+- Image: keep PHP-FPM in the foreground for Supervisor process monitoring
+- Image: allow Kubernetes probes to access `/fpm-ping` while keeping `/fpm-status` restricted
+
 # v2.0.26-1
 
 - PHP: v8.3.33
