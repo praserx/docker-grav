@@ -88,10 +88,12 @@ RUN (crontab -l; echo "* * * * * cd /var/www/html;/usr/local/bin/php bin/grav sc
 # provide container inside image for data persistence
 VOLUME ["/var/www/html"]
 
-USER root
-
 # Let supervisord start nginx & php-fpm
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
 # Configure a healthcheck to validate that everything is up&running
 HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+
+# Run the application without requiring root privileges. This also allows the
+# image to run with Kubernetes' restricted security profile.
+USER www-data

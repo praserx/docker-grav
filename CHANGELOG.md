@@ -1,3 +1,11 @@
+# v2.0.26-1
+
+- PHP: v8.3.33
+- Grav: v2.0.26
+- Image: added `linux/amd64` and `linux/arm64` builds
+- Image: run nginx, PHP-FPM, and Supervisor without requiring root privileges for Kubernetes deployments
+- Image: added a Makefile with configuration checks and HTTP smoke tests
+
 # v2.0.26
 
 - PHP: v8.3.33
