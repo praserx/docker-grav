@@ -1,6 +1,11 @@
 name: build-docker-image
 
-on: [push] 
+on:
+  # Keep CI builds for branches. Release/tag builds are handled by the
+  # publish workflow, which builds and pushes the image.
+  push:
+    branches:
+      - '**'
 
 jobs:
   build-docker-image:
